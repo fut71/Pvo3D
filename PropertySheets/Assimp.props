@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<AdditionalIncludeDirectories>
+				$(SolutionDir)External\assimp\include;
+				%(AdditionalIncludeDirectories)
+			</AdditionalIncludeDirectories>
+		</ClCompile>
+		<Link>
+			<AdditionalLibraryDirectories>
+				$(SolutionDir)External\assimp\build\lib\$(Configuration);
+				%(AdditionalLibraryDirectories)
+			</AdditionalLibraryDirectories>
+
+			<!-- Debug 구성일 때 -->
+			<AdditionalDependencies Condition="'$(Configuration)'=='Debug'">
+				assimp-vc143-mtd.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+
+			<!-- Release 구성일 때 -->
+			<AdditionalDependencies Condition="'$(Configuration)'=='Release'">
+				assimp-vc143-mt.lib;
+				%(AdditionalDependencies)
+			</AdditionalDependencies>
+
+		</Link>
+	</ItemDefinitionGroup>
+</Project>

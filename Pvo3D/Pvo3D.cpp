@@ -5,6 +5,8 @@
 #include "resource.h"
 #include "DxRenderer.h"
 
+#include "test.h"
+
 // 라이브러리 링크
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")

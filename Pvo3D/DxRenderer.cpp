@@ -1,5 +1,6 @@
 #include "DxRenderer.h"
 #include <cassert>
+#include "test.h"
 
 DxRenderer::DxRenderer()
 {
@@ -7,7 +8,6 @@ DxRenderer::DxRenderer()
 
 DxRenderer::~DxRenderer()
 {
-	Finalize();
 }
 
 bool DxRenderer::Initialize(HWND InWindowHandle, uint32_t InWidth, uint32_t InHeight)
@@ -32,6 +32,10 @@ bool DxRenderer::Initialize(HWND InWindowHandle, uint32_t InWidth, uint32_t InHe
 	Viewport.Height = static_cast<float>(RendererHeight);
 	Viewport.MinDepth = 0.0f;
 	Viewport.MaxDepth = 1.0f;
+
+
+	TestDirectXTK();
+	TestAssimp();
 
 	return true;
 }
